@@ -1,6 +1,5 @@
 -- database/schema.sql
-CREATE DATABASE IF NOT EXISTS foodsnap_ai;
-USE foodsnap_ai;
+-- We rely on the DB_NAME env var for connection
 
 CREATE TABLE IF NOT EXISTS users (
     id INT AUTO_INCREMENT PRIMARY KEY,
