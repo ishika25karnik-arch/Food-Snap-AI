@@ -1,6 +1,5 @@
 -- database/seed.sql
-USE foodsnap_ai;
-
+-- We rely on the DB connection to specify the database
 INSERT INTO nutrition_reference (food_name, category, calories_per_100g, protein_per_100g, carbs_per_100g, fat_per_100g, fiber_per_100g, sugar_per_100g, sodium_per_100g, calcium_per_100g, iron_per_100g, potassium_per_100g, vitamin_a_per_100g, vitamin_c_per_100g) VALUES
 ('Cooked Rice', 'Grains', 130, 2.7, 28.2, 0.3, 0.4, 0.1, 1, 10, 1.2, 35, 0, 0),
 ('Dal', 'Pulses', 116, 9, 20, 0.4, 8, 1, 2, 40, 3, 300, 0, 0),

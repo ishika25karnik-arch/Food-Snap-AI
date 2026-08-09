@@ -2,7 +2,7 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { useEffect, useState } from 'react';
 import { PieChart, Pie, Cell, Legend, Tooltip, ResponsiveContainer, Radar, RadarChart, PolarGrid, PolarAngleAxis } from 'recharts';
-import api from '../services/api';
+import api, { getImageUrl } from '../services/api';
 import { Check, ArrowLeft, Bookmark, Salad, AlertTriangle, Leaf, Zap, Heart } from 'lucide-react';
 
 const containerVariants = { hidden: { opacity: 0 }, show: { opacity: 1, transition: { staggerChildren: 0.1 } } };
@@ -102,7 +102,7 @@ const Result = () => {
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '1.5rem', marginBottom: '1.5rem' }}>
                 <motion.div variants={cardVariants} whileHover={{ scale: 1.02 }} className="glass-card" style={{ padding: '2rem', textAlign: 'center', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', background: 'linear-gradient(to bottom right, rgba(255,255,255,0.9), rgba(255,255,255,0.4))' }}>
                     {imageUrl ? (
-                        <motion.img initial={{ scale: 0.9, opacity: 0 }} animate={{ scale: 1, opacity: 1 }} transition={{ duration: 0.5 }} src={`http://localhost:5000${imageUrl}`} alt={foodName} style={{ width: '100%', height: '200px', objectFit: 'cover', borderRadius: '12px', marginBottom: '1rem', boxShadow: '0 10px 20px rgba(0,0,0,0.1)' }} />
+                        <motion.img initial={{ scale: 0.9, opacity: 0 }} animate={{ scale: 1, opacity: 1 }} transition={{ duration: 0.5 }} src={getImageUrl(imageUrl)} alt={foodName} style={{ width: '100%', height: '200px', objectFit: 'cover', borderRadius: '12px', marginBottom: '1rem', boxShadow: '0 10px 20px rgba(0,0,0,0.1)' }} />
                     ) : (
                         <motion.div animate={{ y: [0, -10, 0] }} transition={{ repeat: Infinity, duration: 3, ease: "easeInOut" }} style={{ padding: '2rem', background: 'linear-gradient(135deg, rgba(16, 185, 129, 0.2), rgba(16, 185, 129, 0.05))', borderRadius: '50%', marginBottom: '1.5rem', boxShadow: '0 10px 25px rgba(16, 185, 129, 0.2)' }}>
                             <Leaf size={64} color="var(--primary)" />

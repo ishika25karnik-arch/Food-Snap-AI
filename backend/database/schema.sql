@@ -1,6 +1,3 @@
--- database/schema.sql
--- We rely on the DB_NAME env var for connection
-
 CREATE TABLE IF NOT EXISTS users (
     id INT AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(255) NOT NULL,

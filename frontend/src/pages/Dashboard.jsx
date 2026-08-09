@@ -1,7 +1,7 @@
 import { useContext, useEffect, useState } from 'react';
 import { AuthContext } from '../context/AuthContext';
 import { Link, useNavigate } from 'react-router-dom';
-import api from '../services/api';
+import api, { getImageUrl } from '../services/api';
 import { Camera, Flame, Heart, ArrowRight, Search, Salad } from 'lucide-react';
 import { motion } from 'framer-motion';
 
@@ -140,7 +140,7 @@ const Dashboard = () => {
                     {recentScans.map(scan => (
                         <motion.div variants={itemVariants} key={scan.id} className="glass-card" style={{ overflow: 'hidden' }}>
                             {scan.image_path ? (
-                                <img src={`http://localhost:5000${scan.image_path}`} alt={scan.food_name} style={{ width: '100%', height: '220px', objectFit: 'cover' }} />
+                                <img src={getImageUrl(scan.image_path)} alt={scan.food_name} style={{ width: '100%', height: '220px', objectFit: 'cover' }} />
                             ) : (
                                 <div style={{ width: '100%', height: '220px', background: 'rgba(0,0,0,0.05)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}><Camera color="var(--text-muted)" size={48} /></div>
                             )}

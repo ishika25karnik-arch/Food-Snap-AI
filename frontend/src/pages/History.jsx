@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import api from '../services/api';
+import api, { getImageUrl } from '../services/api';
 import { Trash2, ArrowLeft } from 'lucide-react';
 
 const containerVariants = {
@@ -80,7 +80,7 @@ const History = () => {
                                     <Trash2 size={18} />
                                 </button>
                                 {scan.image_path ? (
-                                    <img src={`http://localhost:5000${scan.image_path}`} alt={scan.food_name} style={{ width: '100%', height: '220px', objectFit: 'cover' }} />
+                                    <img src={getImageUrl(scan.image_path)} alt={scan.food_name} style={{ width: '100%', height: '220px', objectFit: 'cover' }} />
                                 ) : (
                                     <div style={{ width: '100%', height: '220px', background: 'rgba(0,0,0,0.05)' }} />
                                 )}
