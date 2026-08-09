@@ -21,8 +21,8 @@ async function initDB() {
             // Some queries might still have comments inside, but basic execution is fine
             await pool.query(query);
         }
-        
         console.log('Database initialized successfully.');
+        process.exit(0);
     } catch (error) {
         console.error('Error initializing database:', error);
         process.exit(1);
