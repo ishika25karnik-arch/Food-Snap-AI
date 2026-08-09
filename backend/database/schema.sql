@@ -46,6 +46,5 @@ CREATE TABLE IF NOT EXISTS food_scans (
     health_score INT DEFAULT 0,
     health_category VARCHAR(100),
     image_path VARCHAR(255),
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
